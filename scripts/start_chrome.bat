@@ -37,8 +37,8 @@ if "%CHROME_PATH%"=="" (
 echo [信息] 启动 Chrome，调试端口: %DEBUG_PORT%
 echo [信息] Chrome 路径: %CHROME_PATH%
 
-REM 启动 Chrome (添加 --remote-allow-origins=* 解决 CDP WebSocket 跨域问题)
-start "" "%CHROME_PATH%" --remote-debugging-port=%DEBUG_PORT% --remote-allow-origins=* --user-data-dir="%USER_DATA_DIR%" --no-first-run --no-default-browser-check --disable-popup-blocking --disable-infobars --disable-dev-shm-usage --disable-gpu --window-size=1280,720 --headless=new
+REM 启动 Chrome
+start "" "%CHROME_PATH%" --remote-debugging-port=%DEBUG_PORT% --user-data-dir="%USER_DATA_DIR%" --no-first-run --no-default-browser-check --disable-popup-blocking --disable-infobars --disable-dev-shm-usage --disable-gpu --window-size=1280,720 --headless=new --remote-allow-origins=* 
 
 timeout /t 3 /nobreak >nul
 
